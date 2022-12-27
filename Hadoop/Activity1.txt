@@ -1,0 +1,93 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\0028M3744> $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
+At line:1 char:14
++ $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
++              ~
+You must provide a value expression following the '/' operator.
+At line:1 char:14
++ $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'sbin/mr-jobhistory-daemon.sh' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression
+
+PS C:\Users\0028M3744> $ docker container run -it -p 9870:9870 -p 8088:8088 registry.gitlab.com/training-support/training-environments:hadoop-v1 bash
+$ : The term '$' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ $ docker container run -it -p 9870:9870 -p 8088:8088 registry.gitlab. ...
++ ~
+    + CategoryInfo          : ObjectNotFound: ($:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+                       $ docker container run -it -p 9870:9870 -p 8088:8088 registry.gitlab.com/training-support/training-environments:hadoop-v1 bas M3744>
+$ : The term '$' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ $ docker container run -it -p 9870:9870 -p 8088:8088 registry.gitlab. ...
++ ~
+    + CategoryInfo          : ObjectNotFound: ($:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\0028M3744>
+PS C:\Users\0028M3744> docker container run -it -p 9870:9870 -p 8088:8088 registry.gitlab.com/training-support/training-environments:hadoop-v1 bash
+Unable to find image 'registry.gitlab.com/training-support/training-environments:hadoop-v1' locally
+hadoop-v1: Pulling from training-support/training-environments
+608211a262ee: Pulling fs layer
+61306300393f: Pulling fs layer
+0a7687d214cc: Pulling fs layer
+38af72466a03: Waiting
+42e5bf010d2f: Waiting
+152c932e670e: Waiting188471d11260: Waiting
+0c4d98300576: Waiting7ade5da59602: Waiting
+401ba29d0022: Pull complete
+33ea0ee68024: Pull complete
+29dd0dd410fc: Pull complete
+9f851d325110: Pull complete
+087be0e1d8dd: Pull complete
+4ca545ee6d5d: Pull complete
+f4e2efc83ea9: Pull complete
+679f49e234e6: Pull complete
+a8b7c27a1dab: Pull complete
+f125ae3af3cf: Pull complete
+634a4b3fdf6a: Pull complete
+6c69c048807f: Pull complete
+9d4858348dfb: Pull complete
+5478d1799d81: Pull complete
+2cbb978e5135: Pull complete
+fd567e0cceef: Pull complete
+4cd4f55fc49e: Pull complete
+adb203486202: Pull complete
+70aba3b36a86: Pull complete
+003094eee177: Pull complete
+660125a6931d: Pull complete
+2dd0da4b85e4: Pull complete
+2806480c5939: Pull complete
+204f9ce25854: Pull complete
+4fb3d1127c51: Pull complete
+1f15937e8a9c: Pull complete
+32f5c02219a3: Pull complete
+b6fef507dc43: Pull complete
+de42c5e97c99: Pull complete
+fb410e647acf: Pull complete
+f1be110c9c3f: Pull complete
+Digest: sha256:9e95963f722718b4394303f79e3103fed5c26c90a924c5fb94341f723ab8b810
+Status: Downloaded newer image for registry.gitlab.com/training-support/training-environments:hadoop-v1
+/
+ * Starting OpenBSD Secure Shell server sshd                                                                                  [ OK ]
+Waiting for hdfs to exit from safemode
+Safe mode is OFF
+Started
+root@e844232bb1e3:/# vim txtFile.txt
+root@e844232bb1e3:/# vim csvFile.csv
+root@e844232bb1e3:/# hdfs dfs -mkdir /user/root/textData
+root@e844232bb1e3:/# hdfs dfs -put ./csvFile.csv /user/root/textData
+root@e844232bb1e3:/# hdfs dfs -put ./txtFile.txt /user/root/textData
+root@e844232bb1e3:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/root/textData/csvFile.csv
+type:regular file permissions:644 root:supergroup size:527 name:csvFile.csv
+root@e844232bb1e3:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/root/textData/txtFile.txt
+type:regular file permissions:644 root:supergroup size:157 name:txtFile.txt
+root@e844232bb1e3:/#
